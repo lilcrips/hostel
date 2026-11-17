@@ -1,0 +1,17 @@
+# Files uploaded by hostel managers: never commit these
+uploads/*
+!uploads/.gitkeep
+!uploads/hostels/
+!uploads/rooms/
+uploads/hostels/*
+uploads/rooms/*
+!uploads/hostels/.gitkeep
+!uploads/rooms/.gitkeep
+
+# Local secrets (database password etc.), created in Phase 2
+config/config.local.php
+
+# Editor / OS clutter
+.vscode/
+.DS_Store
+Thumbs.db
