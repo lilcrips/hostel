@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--
+  index.html: the ONE real HTML page of the app.
+  React fills in the empty <div id="root"> using JavaScript, and swaps
+  what's inside it when you move between "pages". This kind of app is
+  called a Single-Page Application (SPA).
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Find student hostels near Ghanaian universities. Compare prices, rooms, distance from campus and contact managers directly." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>CampusStay | Find Your Next Home, Closer to Campus.</title>
+
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- Vite loads our React code starting from this file -->
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
