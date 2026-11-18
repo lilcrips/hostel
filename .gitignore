@@ -1,17 +1,16 @@
-# Files uploaded by hostel managers: never commit these
-uploads/*
-!uploads/.gitkeep
-!uploads/hostels/
-!uploads/rooms/
-uploads/hostels/*
-uploads/rooms/*
-!uploads/hostels/.gitkeep
-!uploads/rooms/.gitkeep
+# Installed packages: recreated by `npm install`, never committed
+node_modules/
 
-# Local secrets (database password etc.), created in Phase 2
-config/config.local.php
+# Production build output: recreated by `npm run build`
+dist/
+
+# Local environment variables (Supabase keys etc.). Only .env.example is committed.
+.env
+.env.local
+.env.*.local
 
 # Editor / OS clutter
 .vscode/
 .DS_Store
 Thumbs.db
+*.log

@@ -1,5 +1,5 @@
 /* =====================================================================
-   assets/css/style.css: CampusStay custom styles
+   src/styles/global.css: CampusStay custom styles (imported in main.jsx)
    ---------------------------------------------------------------------
    Bootstrap gives us the grid and basic components. This file adds our
    own "look": colours, fonts, cards, spacing.
@@ -153,6 +153,13 @@ a:hover { color: var(--brand-dark); }
 }
 .section-title { font-size: clamp(1.6rem, 3vw, 2.25rem); margin: 0; }
 
+/* Narrow centred column for simple pages (search placeholder, coming soon) */
+.container.narrow { max-width: 760px; }
+.coming-soon-icon {
+    display: inline-grid; place-items: center; width: 72px; height: 72px; border-radius: 20px;
+    background: var(--brand-light); color: var(--brand); font-size: 2rem; margin-bottom: 1.25rem;
+}
+
 .demo-notice {
     display: flex; gap: .65rem; align-items: flex-start;
     background: #fff8eb; border: 1px solid #fde3b0; color: var(--warning);
@@ -170,7 +177,7 @@ a:hover { color: var(--brand-dark); }
 .hostel-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
 
 .hostel-card-media {
-    /* --hue is set per card in index.php to vary placeholder colours.
+    /* --hue is set per card in HostelCard.jsx to vary placeholder colours.
        Once real photos exist this becomes an <img>. */
     position: relative; aspect-ratio: 16 / 10;
     display: grid; place-items: center;
@@ -179,12 +186,14 @@ a:hover { color: var(--brand-dark); }
 }
 .hostel-card-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 
+/* Badges sit in a row in the top-left corner; flex keeps them from overlapping */
+.card-badges { position: absolute; top: 12px; left: 12px; display: flex; gap: .4rem; }
 .badge-demo, .badge-verified {
-    position: absolute; top: 12px; font-size: .75rem; font-weight: 700;
+    font-size: .75rem; font-weight: 700; line-height: 1.4;
     padding: .3rem .65rem; border-radius: 999px;
 }
-.badge-demo { left: 12px; background: rgba(16, 35, 31, .75); color: #fff; }
-.badge-verified { left: 72px; background: #fff; color: var(--brand); }
+.badge-demo { background: rgba(16, 35, 31, .75); color: #fff; }
+.badge-verified { background: #fff; color: var(--brand); }
 
 .btn-fav {
     position: absolute; top: 10px; right: 10px;

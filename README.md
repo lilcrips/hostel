@@ -2,25 +2,44 @@
 
 **Find Your Next Home, Closer to Campus.** A hostel discovery platform for university students in Ghana.
 
-Built with HTML, CSS, JavaScript, Bootstrap 5, PHP and MySQL. The full plan (MVP, architecture, ERD, services, roadmap) is in [`docs/PROJECT_PLAN.md`](docs/PROJECT_PLAN.md).
+Built with **React + Vite**, **Supabase** (database, login, file storage) and **Bootstrap 5**, hosted on **Vercel**.
+The full plan (MVP, architecture, database design, services, roadmap) is in [`docs/PROJECT_PLAN.md`](docs/PROJECT_PLAN.md).
 
 ## Current status
 
 | Phase | Status |
 |---|---|
-| 1. UI/UX: homepage, header, footer, hostel card | ✅ Done (uses clearly labelled **demo data**) |
-| 2. Database | ⏳ Next |
+| 1. UI/UX: React app, layout, homepage, hostel card | ✅ Done (uses clearly labelled **demo data**) |
+| 2. Database (Supabase) | ⏳ Next |
 | 3–7 | Not started |
 
-What works now: the homepage, responsive navbar, and a search form that sends your choices to `search.php`, which shows what it received. What does **not** work yet: real search results, login, maps, dashboards. Links to those pages return "Not Found" until we build them.
+**What works now:**
+- The homepage and the responsive navbar with its mobile menu.
+- The search form, which sends your choices to `/search`. That page shows the filters it received.
+- Placeholder pages for features that aren't built yet.
 
-## Running it locally with XAMPP (Windows)
+**What doesn't work yet:** real search results, login, maps, dashboards. Nothing is saved anywhere yet.
 
-1. Install XAMPP from <https://www.apachefriends.org> and open the **XAMPP Control Panel**.
-2. Click **Start** next to **Apache**. (MySQL isn't needed until Phase 2.)
-3. Copy this project folder into `C:\xampp\htdocs\` and name it `campusstay`, so you have `C:\xampp\htdocs\campusstay\index.php`.
-4. Open your browser at **http://localhost/campusstay/**.
+## Running it on your computer
 
-On macOS the folder is `/Applications/XAMPP/htdocs/`.
+You need **Node.js 18 or newer** (the LTS installer from <https://nodejs.org> includes it). Check with `node -v`.
 
-**Without XAMPP:** if PHP is installed, run `php -S localhost:8000` inside the project folder and open http://localhost:8000.
+```bash
+npm install      # first time only: downloads the libraries into node_modules/
+npm run dev      # starts the development server
+```
+
+Open the address it prints (usually **http://localhost:5173**). The page refreshes automatically when you save a file. Press `Ctrl + C` in the terminal to stop the server.
+
+```bash
+npm run build    # creates the optimised production version in dist/
+npm run preview  # serves dist/ locally to check the production build
+```
+
+## Deploying to Vercel (free)
+
+1. Push this repository to GitHub.
+2. On <https://vercel.com>, choose **Add New → Project** and import the repository. Vercel detects Vite automatically.
+3. From Phase 2 onwards, add `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` under **Settings → Environment Variables**.
+
+`vercel.json` makes page refreshes on addresses like `/search` work, instead of showing a 404.
